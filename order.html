@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/order.css">
+    <link rel="icon" href="./images/Frame 39.png" type="image/png">
+    <title>صفحة الطلب</title>
+</head>
+
+<body>
+    <div id="reload">
+        <div class="spinner">
+            <div></div>   
+            <div></div>    
+            <div></div>    
+            <div></div>    
+            <div></div>    
+            <div></div>    
+            <div></div>    
+            <div></div>    
+            <div></div>    
+            <div></div>    
+          </div>
+    </div>
+    <div class="container" dir="rtl">
+        <a href="./index.html" style="text-decoration: none;
+        color: rgb(189, 7, 7); float: left; display: flex;
+        align-items: center; gap: 5px;"><span style="font-weight: bold; font-size: 20px;">رجوع</span><i
+                style=" font-size: 25px;" class="fa-solid fa-arrow-right-from-bracket"></i> </a>
+
+        <h2>تفاصيل المنتج</h2>
+        <div id="product-details">
+            <div class="imagePrice">
+                <p>السعر: <span id="product-price"></span></p>
+                <img src="" id="product-image" alt="صورة المنتج">
+            </div>
+            <div style="display: flex;
+            color: gold; width: 100%; justify-content: center; font-size: 23px; margin-bottom: 8px; gap: 4px;">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <form id="orderForm" action="https://script.google.com/macros/s/AKfycby434nNED6waPtuWDTRDa_MBS66hLIqTi6nePVznjUsX-hJYsSglyyUUFGplmOj3MtLew/exec" method="POST" name="contact-form">
+                <label for="Quantity">الكمية</label>
+                <div style="display: flex; align-items: center; width: 100%; gap: 5px;">
+                    <a id="decrement" style="text-decoration: none; display: flex; align-items: center; justify-content: center; background-color: #056f2f; width: 50px; height: 40px; color: aliceblue; font-size: 30px; border-radius: 5px;" href="#">-</a>
+                    <input type="number" name="الكمية" id="Quantity" value="1" pattern="[1-9][0-9]*" required readonly>
+                    <p id="error-quantity" class="error-message" style="display:none;">من فضلك أدخل الكمية</p>
+                    <a id="increment" style="text-decoration: none; display: flex; align-items: center; justify-content: center; background-color: #056f2f; width: 50px; height: 40px; color: aliceblue; font-size: 30px; border-radius: 5px;" href="#">+</a>
+                </div>
+                <label for="product-name">اسم المنتج </label>
+                <input type="text" name="إسم المنتج" id="product-name" readonly>
+                <label for="fullName">إسمك الكامل <i style="color: #8a0909;" class="fa-solid fa-user"></i></label>
+                <input type="text" id="fullName" name="الإسم الكامل" placeholder="أكتب إسمك الكامل" required>
+                <label for="yourNumber">رقم الهاتف <i style="color: #056f2f;"
+                        class="fa-solid fa-phone-volume"></i></label>
+                <input dir="rtl" type="number" id="yourNumber" name="رقم الهاتف" placeholder="أكتب رقم هاتفك" required>
+                <label for="">إختر ولايتك <i style="color: #0e4fb1;" class="fa-solid fa-earth-americas"></i></label>
+                <select style="background: #ba1d1d25;" name="الولاية" id="location" required>
+                    <option value="" selected disabled>اختر ولايتك</option>
+                    <option value="أدرار">1. ولاية أدرار</option>
+                    <option value="الشلف">2. ولاية الشلف</option>
+                    <option value="الأغواط">3. ولاية الأغواط</option>
+                    <option value="أم البواقي">4. ولاية أم البواقي</option>
+                    <option value="باتنة">5. ولاية باتنة</option>
+                    <option value="بجاية">6. ولاية بجاية</option>
+                    <option value="بسكرة">7. ولاية بسكرة</option>
+                    <option value="بشار">8. ولاية بشار</option>
+                    <option value="البليدة">9. ولاية البليدة</option>
+                    <option value="البويرة">10. ولاية البويرة</option>
+                    <option value="تمنراست">11. ولاية تمنراست</option>
+                    <option value="تبسة">12. ولاية تبسة</option>
+                    <option value="تلمسان">13. ولاية تلمسان</option>
+                    <option value="تيارت">14. ولاية تيارت</option>
+                    <option value="تيزي وزو">15. ولاية تيزي وزو</option>
+                    <option value="الجزائر">16. ولاية الجزائر</option>
+                    <option value="الجلفة">17. ولاية الجلفة</option>
+                    <option value="جيجل">18. ولاية جيجل</option>
+                    <option value="سطيف">19. ولاية سطيف</option>
+                    <option value="سعيدة">20. ولاية سعيدة</option>
+                    <option value="سكيكدة">21. ولاية سكيكدة</option>
+                    <option value="سيدي بلعباس">22. ولاية سيدي بلعباس</option>
+                    <option value="عنابة">23. ولاية عنابة</option>
+                    <option value="قالمة">24. ولاية قالمة</option>
+                    <option value="قسنطينة">25. ولاية قسنطينة</option>
+                    <option value="المدية">26. ولاية المدية</option>
+                    <option value="مستغانم">27. ولاية مستغانم</option>
+                    <option value="المسيلة">28. ولاية المسيلة</option>
+                    <option value="معسكر">29. ولاية معسكر</option>
+                    <option value="ورقلة">30. ولاية ورقلة</option>
+                    <option value="وهران">31. ولاية وهران</option>
+                    <option value="البيض">32. ولاية البيض</option>
+                    <option value="برج بوعريريج">34. ولاية برج بوعريريج</option>
+                    <option value="بومرداس">35. ولاية بومرداس</option>
+                    <option value="الطارف">36. ولاية الطارف</option>
+                    <option value="تيسمسيلت">38. ولاية تيسمسيلت</option>
+                    <option value="الوادي">39. ولاية الوادي</option>
+                    <option value="خنشلة">40. ولاية خنشلة</option>
+                    <option value="سوق أهراس">41. ولاية سوق أهراس</option>
+                    <option value="تيبازة">42. ولاية تيبازة</option>
+                    <option value="ميلة">43. ولاية ميلة</option>
+                    <option value="عين الدفلى">44. ولاية عين الدفلى</option>
+                    <option value="النعامة">45. ولاية النعامة</option>
+                    <option value="عين تموشنت">46. ولاية عين تموشنت</option>
+                    <option value="غرداية">47. ولاية غرداية</option>
+                    <option value="غليزان">48. ولاية غليزان</option>
+                    <option value="تيميمون">49. ولاية تيميمون</option>
+                    <option value="أولاد جلال">51. ولاية أولاد جلال</option>
+                    <option value="بني عباس">52. ولاية بني عباس</option>
+                    <option value="إن صالح">53. ولاية إن صالح</option>
+                    <option value="عين قزام">54. ولاية عين قزام</option>
+                    <option value="تقرت">55. ولاية تقرت</option>
+                    <option value="المغير">57. ولاية المغير</option>
+                    <option value="المنيعة">58. ولاية المنيعة</option>
+                </select>
+
+                <label for="yourNumber">البلدية <i style="color: #e38e27;" class="fa-solid fa-house"></i></label>
+                <input style="background: #ba1d1d25;" type="text" id="yourcity" name="البلدية" placeholder="البلدية" required>
+
+
+                <label for="yourNumber">العنوان <i style="color: #e38e27;" class="fa-solid fa-house"></i></label>
+                <input style="background: #ba1d1d25;" type="text" id="yourcity" name="العنوان" placeholder="العنوان" required>
+                <label for="">إختر التوصيل</label>
+                <select style="background: #ba1d1d25;" name="التوصيل" id="price" required>
+                    <option value="" selected disabled>اختر التوصيل</option>
+                    <option value="المنزل">المنزل</option>
+                </select>
+                <label for="">ملاحظة (اختياري)</label>
+              <textarea  style="font-family:  Cairo; padding: 5px; font-size: 15px;  background: white; outline: none;" placeholder="اكتب ملاحظة حول الطلب" name="ملاحظة" id="" cols="30" rows="3"></textarea>
+                <button type="submit" class="button">تأكيد الطلب</button>
+
+                <div style="display: flex; gap: 5px; font-weight: bold;">
+                    <p>سعر الشحن : </p>
+                    <p style="color: #8a0909;" id="priceId">اختر (الولاية + التوصيل)</p>
+                </div>
+            </form>
+
+
+            <p style="color: brown;">سيتم التواصل معكم لتأكيد الطلب عبر الرقم المدخل</p>
+            <br>
+            <p>الوصف: <span id="product-description"></span></p>
+            <!-- <div class="del">
+                <h3>أسعار الشحن</h3>
+                <img src="./5.jpg" alt="">
+            </div> -->
+        </div>
+        <a class="phone-btn" href="tel:0778978023"><i class="fa-solid fa-phone"></i></a>
+    </div>
+
+    <script>
+        // استخراج البيانات من عنوان الصفحة
+        var urlParams = new URLSearchParams(window.location.search);
+        var productName = urlParams.get('productName');
+        var price = urlParams.get('price');
+        var description = urlParams.get('description');
+        var imageUrl = urlParams.get('imageUrl');
+
+        // عرض البيانات في صفحة الطلب
+        document.getElementById("product-name").value = productName;
+        document.getElementById('product-price').textContent = price + " دج";
+        document.getElementById('product-description').textContent = description;
+        document.getElementById('product-image').src = imageUrl;
+
+        const form = document.getElementById('orderForm');
+        form.addEventListener('submit', function (event) {
+            const quantity = document.getElementById('Quantity');
+            const fullName = document.getElementById('fullName');
+            const yourNumber = document.getElementById('yourNumber');
+            const state = document.getElementById('state');
+
+        });
+
+        var originalPrice = parseFloat(document.getElementById("product-price").innerText);
+
+        function updatePrice() {
+            var quantity = document.getElementById("Quantity").value; // الكمية التي أدخلها المستخدم
+            var priceElement = document.getElementById("product-price"); // عنصر عرض السعر
+            var errorMessage = document.getElementById("error-quantity"); // عنصر الرسالة الخطأ
+
+            // إظهار رسالة الخطأ إذا كانت الكمية فارغة
+            if (quantity.trim() === "") {
+                errorMessage.style.display = "block";
+                priceElement.innerText = originalPrice + " دج"; // إعادة السعر إلى القيمة الأصلية
+                return;
+            } else {
+                errorMessage.style.display = "none";
+            }
+
+            // التأكد من أن القيمة المدخلة هي رقم صحيح
+            if (!isNaN(quantity) && parseInt(quantity) > 0) {
+                // تحديث قيمة السعر بحسب الكمية
+                priceElement.innerText = parseInt(quantity) * originalPrice + " دج";
+            }
+        }
+
+        document.getElementById("Quantity").addEventListener("input", updatePrice);
+
+
+
+
+
+        document.getElementById("increment").addEventListener("click", function() {
+        var quantityInput = document.getElementById("Quantity");
+        var currentValue = parseInt(quantityInput.value);
+        if (!isNaN(currentValue)) {
+            quantityInput.value = currentValue + 1;
+        }
+    });
+
+    document.getElementById("decrement").addEventListener("click", function() {
+        var quantityInput = document.getElementById("Quantity");
+        var currentValue = parseInt(quantityInput.value);
+        if (!isNaN(currentValue) && currentValue > 1) {
+            quantityInput.value = currentValue - 1;
+        }
+    });
+
+
+    function updatePrice(quantity, price) {
+        var totalPrice = price * quantity;
+        document.getElementById("product-price").textContent = totalPrice;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    document.getElementById("location").addEventListener("change", function() {
+            updatePrice();
+        });
+    
+        document.getElementById("price").addEventListener("change", function() {
+            updatePrice();
+        });
+    
+        function updatePrice() {
+            var state = document.getElementById("location").value;
+            var deliveryType = document.getElementById("price").value;
+            var priceId = document.getElementById("priceId");
+    
+            // Prices for home and office delivery for each state
+            var prices = {
+    "أدرار": { "المنزل": 1230, "المكتب": 0 },
+    "الشلف": { "المنزل": 880, "المكتب": 500 },
+    "الأغواط": { "المنزل": 980, "المكتب": 500 },
+    "أم البواقي": { "المنزل": 880, "المكتب": 0 },
+    "باتنة": { "المنزل": 930, "المكتب": 500 },
+    "بجاية": { "المنزل": 830, "المكتب": 500 },
+    "بسكرة": { "المنزل": 980, "المكتب": 500 },
+    "بشار": { "المنزل": 1030, "المكتب": 700 },
+    "البليدة": { "المنزل": 630, "المكتب": 400 },
+    "البويرة": { "المنزل": 730, "المكتب": 500 },
+    "تمنراست": { "المنزل": 1500, "المكتب": 0 },
+    "تبسة": { "المنزل": 930, "المكتب": 0 },
+    "تلمسان": { "المنزل": 930, "المكتب": 500 },
+    "تيارت": { "المنزل": 880, "المكتب": 500 },
+    "تيزي وزو": { "المنزل": 780, "المكتب": 500 },
+    "الجزائر": { "المنزل": 400, "المكتب": 300 },
+    "الجلفة": { "المنزل": 980, "المكتب": 500 },
+    "جيجل": { "المنزل": 930, "المكتب": 500 },
+    "سطيف": { "المنزل": 830, "المكتب": 500 },
+    "سعيدة": { "المنزل": 930, "المكتب": 0 },
+    "سكيكدة": { "المنزل": 930, "المكتب": 500 },
+    "سيدي بلعباس": { "المنزل": 930, "المكتب": 0 },
+    "عنابة": { "المنزل": 880, "المكتب": 500 },
+    "قالمة": { "المنزل": 930, "المكتب": 0 },
+    "قسنطينة": { "المنزل": 830, "المكتب": 500 },
+    "المدية": { "المنزل": 830, "المكتب": 500 },
+    "مستغانم": { "المنزل": 930, "المكتب": 500 },
+    "المسيلة": { "المنزل": 880, "المكتب": 0 },
+    "معسكر": { "المنزل": 930, "المكتب": 500 },
+    "ورقلة": { "المنزل": 980, "المكتب": 0 },
+    "وهران": { "المنزل": 830, "المكتب": 500 },
+    "البيض": { "المنزل": 1030, "المكتب": 0 },
+    "إليزي": { "المنزل": 0, "المكتب": 0 },
+    "برج بوعريريج": { "المنزل": 830, "المكتب": 0 },
+    "بومرداس": { "المنزل": 730, "المكتب": 500 },
+    "الطارف": { "المنزل": 880, "المكتب": 0 },
+    "تندوف": { "المنزل": 0, "المكتب": 0 },
+    "تيسمسيلت": { "المنزل": 930, "المكتب": 500 },
+    "الوادي": { "المنزل": 980, "المكتب": 0 },
+    "خنشلة": { "المنزل": 930, "المكتب": 0 },
+    "سوق أهراس": { "المنزل": 930, "المكتب": 0 },
+    "تيبازة": { "المنزل": 730, "المكتب": 0 },
+    "ميلة": { "المنزل": 930, "المكتب": 0 },
+    "عين الدفلى": { "المنزل": 930, "المكتب": 500 },
+    "النعامة": { "المنزل": 1030, "المكتب": 0 },
+    "عين تموشنت": { "المنزل": 930, "المكتب": 0 },
+    "غرداية": { "المنزل": 980, "المكتب": 0 },
+    "غليزان": { "المنزل": 930, "المكتب": 500 },
+    "تيميمون": { "المنزل": 1330, "المكتب": 0 },
+    "برج باجي مختار": { "المنزل": 0, "المكتب": 0 },
+    "أولاد جلال": { "المنزل": 980, "المكتب": 0 },
+    "بني عباس": { "المنزل": 1030, "المكتب": 0 },
+    "إن صالح": { "المنزل": 1530, "المكتب": 0 },
+    "عين قزام": { "المنزل": 1530, "المكتب": 0 },
+    "تقرت": { "المنزل": 980, "المكتب": 500 },
+    "جانت": { "المنزل": 0, "المكتب": 0 },
+    "المغير": { "المنزل": 980, "المكتب": 0 },
+    "المنيعة": { "المنزل": 1030, "المكتب": 0 }
+};
+    
+            // Check if the selected state exists in the prices object
+            if (prices.hasOwnProperty(state)) {
+                if (prices[state].hasOwnProperty(deliveryType)) {
+                    var deliveryPrice = prices[state][deliveryType];
+                    priceId.textContent = deliveryPrice + " دج";
+                }
+            }
+        }
+    </script>
+
+
+
+
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycby434nNED6waPtuWDTRDa_MBS66hLIqTi6nePVznjUsX-hJYsSglyyUUFGplmOj3MtLew/exec';
+    const form1 = document.forms['contact-form'];
+
+    form1.addEventListener('submit', e => {
+        e.preventDefault();
+        fetch(scriptURL, { method: 'POST', body: new FormData(form1)})
+        .then(response => Swal.fire({
+        title: 'تم إرسال الطلب',
+        text: 'سيتم التواصل معكم قريبا',
+        icon: 'success',
+        confirmButtonText: 'حسنا',
+        className: "done",
+
+            }))
+        .then(() => { window.location.reload(); })
+        .catch(document.getElementById("reload").style.display = "block");
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>

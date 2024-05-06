@@ -1,0 +1,229 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Cairo", sans-serif;
+  background: linear-gradient(#ffffff, #eae9e9);
+}
+.error-message {
+  font-size: 12px;
+  color: red;
+}
+input {
+  height: 40px;
+  width: 100%;
+  font-size: 18px;
+  padding: 0 5px;
+  background: #fff;
+  border: 1px solid #000;
+  outline: none;
+  border-radius: 8px;
+}
+
+select {
+  height: 45px;
+  background: white;
+  border-radius: 8px;
+}
+#Quantity {
+  width: 80px;
+  text-align: center;
+}
+.container {
+  width: 500px;
+  max-width: 95%;
+  margin: 20px auto;
+  position: relative;
+}
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 3px solid rgb(165, 6, 6);
+  padding: 10px;
+  border-radius: 10px;
+}
+.container .imagePrice {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  border: 1px solid #000;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px #afafaf;
+  background: #fff;
+}
+.container .imagePrice img {
+  height: 100%;
+}
+.container .imagePrice #product-price {
+  font-size: 27px;
+  color: rgb(171, 9, 9);
+}
+.container #product-name {
+  font-size: 25px;
+  border: none;
+  color: green;
+  outline: none;
+  background-color: transparent;
+}
+.container #product-name:focus {
+  box-shadow: none;
+}
+
+/* button */
+.button {
+  position: relative;
+  padding: 10px 22px;
+  width: 150px;
+  height: auto;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  background-color: #0e8435;
+  transition: all 0.2s ease;
+  margin: 15px auto;
+  font-size: 18px;
+}
+
+.button:active {
+  transform: scale(0.96);
+}
+
+.error {
+  border: 1px solid red;
+}
+
+.del h3 {
+  font-size: 25px;
+  color: #9a0f0f;
+  position: relative;
+  margin-bottom: 10px;
+}
+.del img {
+  max-width: 100%;
+}
+.del h3::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  left: 0;
+  bottom: 0;
+  background: #9a0f0f;
+  
+}
+
+.fa-phone {
+  background: rgb(23, 188, 18);
+  color: white;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  font-size: 22px;
+  padding: 12px;
+  border-radius: 50%;
+}
+
+.spinner {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+}
+
+.spinner div {
+  position: absolute;
+  width: 50%;
+  height: 150%;
+  background: #000000;
+  transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1%));
+  animation: spinner-fzua35 1s calc(var(--delay) * 1s) infinite ease;
+}
+
+.spinner div:nth-child(1) {
+  --delay: 0.1;
+  --rotation: 36;
+  --translation: 150;
+}
+
+.spinner div:nth-child(2) {
+  --delay: 0.2;
+  --rotation: 72;
+  --translation: 150;
+}
+
+.spinner div:nth-child(3) {
+  --delay: 0.3;
+  --rotation: 108;
+  --translation: 150;
+}
+
+.spinner div:nth-child(4) {
+  --delay: 0.4;
+  --rotation: 144;
+  --translation: 150;
+}
+
+.spinner div:nth-child(5) {
+  --delay: 0.5;
+  --rotation: 180;
+  --translation: 150;
+}
+
+.spinner div:nth-child(6) {
+  --delay: 0.6;
+  --rotation: 216;
+  --translation: 150;
+}
+
+.spinner div:nth-child(7) {
+  --delay: 0.7;
+  --rotation: 252;
+  --translation: 150;
+}
+
+.spinner div:nth-child(8) {
+  --delay: 0.8;
+  --rotation: 288;
+  --translation: 150;
+}
+
+.spinner div:nth-child(9) {
+  --delay: 0.9;
+  --rotation: 324;
+  --translation: 150;
+}
+
+.spinner div:nth-child(10) {
+  --delay: 1;
+  --rotation: 360;
+  --translation: 150;
+}
+
+@keyframes spinner-fzua35 {
+  0%, 10%, 20%, 30%, 50%, 60%, 70%, 80%, 90%, 100% {
+    transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1%));
+  }
+
+  50% {
+    transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1.5%));
+  }
+}
+
+#reload {
+  display: none;
+  z-index: 10;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.done {
+  z-index: 11;
+}
